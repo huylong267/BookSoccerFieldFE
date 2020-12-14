@@ -10,9 +10,10 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import ComplexGrid from "components/Grid/ComplexGrid";
 import Pagination from '@material-ui/lab/Pagination';
 import Footer from 'components/Footer/Footer';
+import logo from 'assets/img/sanbong.jpg';
+
 
 const useStyles = makeStyles((theme) => ({
     button: {
@@ -130,20 +131,31 @@ export default function Detail(props) {
 
             <GridItem xs={12} sm={12} md={12} >
 
-                {listField.map((field, k) => (
-                    <GridContainer
-                        direction="row"
-                        justify="center"
-                        alignItems="center"
-                        spacing={2} style={{ padding: "20px" }}
-                        key={k}
-                    >
-                        <GridItem xs={12} sm={12} md={12}>
-                            <ComplexGrid field={field}></ComplexGrid>
-                        </GridItem>
+                <GridContainer
+                    direction="row"
+                    justify="center"
+                    alignItems="center"
+                    spacing={2} style={{ padding: "20px" }}
+                  
+                >
+                    <Carousel>
+                        <div>
+                            <img src={logo} />
+                            <p className="legend">Legend 1</p>
+                        </div>
+                        <div>
+                            <img src={logo} />
+                            <p className="legend">Legend 2</p>
+                        </div>
+                        <div>
+                            <img src={logo} />
+                            <p className="legend">Legend 3</p>
+                        </div>
+                    </Carousel>
 
-                    </GridContainer>
-                ))}
+
+                </GridContainer>
+
             </GridItem>
 
             <GridItem xs={12} sm={12} md={12} >
