@@ -6,13 +6,11 @@ import styles from "assets/jss/material-dashboard-react/views/iconsStyle.js";
 import PrimarySearchAppBar from "components/AppBar/PrimarySearchAppBar.js"
 import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+
 import Pagination from '@material-ui/lab/Pagination';
 import Footer from 'components/Footer/Footer';
 import logo from 'assets/img/sanbong.jpg';
+import CustomCarousel from 'components/Carousel/CustomCarousel'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -80,56 +78,11 @@ export default function Detail(props) {
                 <PrimarySearchAppBar />
             </GridItem>
 
-            <GridItem xs={12} sm={12} md={12}>
-                <GridContainer direction="row"
-                    justify="center"
-                    alignItems="center"
-                    spacing={2}>
-                    <FormControl className={classes.formControl}>
-                        <InputLabel id="demo-controlled-open-select-label">Tỉnh/Thành</InputLabel>
-                        <Select
-                            labelId="demo-controlled-open-select-label"
-                            id="demo-controlled-open-select"
-                            open={openProvince}
-                            onClose={handleCloseProvince}
-                            onOpen={handleOpenProvince}
-                            value={province}
-                            onChange={handleChangeProvince}
-                        >
-                            <MenuItem value="">
-                                <em>None</em>
-                            </MenuItem>
-                            <MenuItem value={10}>Ten</MenuItem>
-                            <MenuItem value={20}>Twenty</MenuItem>
-                            <MenuItem value={30}>Thirty</MenuItem>
-                        </Select>
-                    </FormControl>
 
-                    <FormControl className={classes.formControl}>
-                        <InputLabel id="demo-controlled-open-select-label">Quận/Huyện</InputLabel>
-                        <Select
-                            labelId="demo-controlled-open-select-label"
-                            id="demo-controlled-open-select"
-                            open={openWard}
-                            onClose={handleCloseWard}
-                            onOpen={handleOpenWard}
-                            value={ward}
-                            onChange={handleChangeWard}
-                        >
-                            <MenuItem value={0}>
-                                <em>Tất cả</em>
-                            </MenuItem>
-                            <MenuItem value={10}>Ten</MenuItem>
-                            <MenuItem value={20}>Twenty</MenuItem>
-                            <MenuItem value={30}>Thirty</MenuItem>
-                        </Select>
-                    </FormControl>
+            <GridItem xs={2} sm={2} md={2} ></GridItem>
 
-                </GridContainer>
 
-            </GridItem>
-
-            <GridItem xs={12} sm={12} md={12} >
+            <GridItem xs={8} sm={8} md={8} >
 
                 <GridContainer
                     direction="row"
@@ -138,25 +91,13 @@ export default function Detail(props) {
                     spacing={2} style={{ padding: "20px" }}
                   
                 >
-                    <Carousel>
-                        <div>
-                            <img src={logo} />
-                            <p className="legend">Legend 1</p>
-                        </div>
-                        <div>
-                            <img src={logo} />
-                            <p className="legend">Legend 2</p>
-                        </div>
-                        <div>
-                            <img src={logo} />
-                            <p className="legend">Legend 3</p>
-                        </div>
-                    </Carousel>
-
+                   <CustomCarousel></CustomCarousel>
 
                 </GridContainer>
 
             </GridItem>
+
+            <GridItem xs={2} sm={2} md={2} ></GridItem>
 
             <GridItem xs={12} sm={12} md={12} >
                 <GridContainer
